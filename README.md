@@ -1,34 +1,34 @@
-# Vortex
-<div align="center">Vortex is a decentralized ZK proof generation network that helps users generate proofs and submit them for verification.</div>
-<div align="center">Vortex is not a blockchain</div>
+# ZeroBase
+<div align="center">ZeroBase is a decentralized ZK proof generation network that helps users generate proofs and submit them for verification.</div>
+<div align="center">ZeroBase is not a blockchain</div>
 
 <p align="center">
-  <img alt="Vortex" width="300" height="300" src="/image/vortexlogo.png"/>
+  <img alt="ZeroBase" width="300" height="300" src="/image/ZeroBaselogo.png"/>
 </p>
 
-## Vortex Architecture
+## ZeroBase Architecture
 
-### Vortex Smart Contract
+### ZeroBase Smart Contract
 
-The Vortex smart contract is a set of upgradable smart contracts written in Solidity that can be deployed on various blockchains. It includes embedded APIs to connect to the Vortex network.
+The ZeroBase smart contract is a set of upgradable smart contracts written in Solidity that can be deployed on various blockchains. It includes embedded APIs to connect to the ZeroBase network.
 
-### Vortex API
+### ZeroBase API
 
-The Vortex API can be invoked within smart contracts as well as directly used in the web2 code section of a project. Users initially declare proof tasks to the Vortex Hub through the Vortex API, which then assigns these proof tasks.
+The ZeroBase API can be invoked within smart contracts as well as directly used in the web2 code section of a project. Users initially declare proof tasks to the ZeroBase Hub through the ZeroBase API, which then assigns these proof tasks.
 
-### Vortex Hub
+### ZeroBase Hub
 
-The Vortex Hub is responsible for broadcasting proof tasks. It broadcasts tasks to the Vortex network, and provers who respond within a certain timeframe randomly receive proof generation tasks. The Vortex Hub also handles user proof requests; users must declare their tasks to the Vortex Hub before sending the specific content and circuitry needed to generate proofs, after which the Vortex Hub broadcasts these tasks within the Vortex network.
+The ZeroBase Hub is responsible for broadcasting proof tasks. It broadcasts tasks to the ZeroBase network, and provers who respond within a certain timeframe randomly receive proof generation tasks. The ZeroBase Hub also handles user proof requests; users must declare their tasks to the ZeroBase Hub before sending the specific content and circuitry needed to generate proofs, after which the ZeroBase Hub broadcasts these tasks within the ZeroBase network.
 
-### Vortex Network
+### ZeroBase Network
 
-The Vortex Network consists of Vortex nodes operated by users, whose job is to generate ZK-SNARK proofs and return them via the Vortex API.
+The ZeroBase Network consists of ZeroBase nodes operated by users, whose job is to generate ZK-SNARK proofs and return them via the ZeroBase API.
 
-## Introduction to Vortex GPU Confidential Computing Technology
+## Introduction to ZeroBase GPU Confidential Computing Technology
 
 ### Confidential Computing(CC) Working Mode of Confidential GPU
 
-![image](https://github.com/Mirror-Tang/vortex/blob/master/image/1.png)
+![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/1.png)
 
 • The CC work mode must be configured before the GPU starts. In cloud scenarios, it is set by the VMM; the CC work mode bit is configured into the GPU EEPROM, and then a GPU reset must be performed for it to take effect.
 
@@ -39,7 +39,7 @@ The Vortex Network consists of Vortex nodes operated by users, whose job is to g
 ---
 ### How to Protect Memory after Enabling CC Work Mode？
 
-![image](https://github.com/Mirror-Tang/vortex/blob/master/image/2.png)
+![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/2.png)
 
 • Most of the GPU memory is configured into the Compute Protected Region (CPR), where the memory is protected by hardware firewalls internal to the GPU.
 
@@ -52,7 +52,7 @@ The Vortex Network consists of Vortex nodes operated by users, whose job is to g
 ---
 ### How does Confidential Computing Protect CUDA Programs (without needing to change the CUDA programs)?
 
-![image](https://github.com/Mirror-Tang/vortex/blob/master/image/3.png)
+![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/3.png)
 
 • All communication between the CPU and GPU is encrypted, including data transfers, commands, and CUDA kernels.
 
@@ -65,7 +65,7 @@ The Vortex Network consists of Vortex nodes operated by users, whose job is to g
 ---
 ### Internal Protection Mechanisms of a Confidential GPU
 
-![image](https://github.com/Mirror-Tang/vortex/blob/master/image/4.png)
+![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/4.png)
 
 If the GPU is started in CC (Confidential Computing) work mode, it blocks all inbound and outbound access to the GPU CPR (Compute Protected Region) memory.
 
@@ -82,7 +82,7 @@ After CC work mode is enabled, all GPU performance counters are disabled to prot
 ---
 ### Multi GPU Secret Computing Based on CVM
 
-![image](https://github.com/Mirror-Tang/vortex/blob/master/image/5.png)
+![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/5.png)
 
 • Enable NVLink communication between GPUs and devices. 1. After enabling CC working mode, do not use PCIe P2P; 2. Both CUDA APIs and hardware firewalls prohibit direct pointer dereference of peer GPU memory.
 
@@ -95,7 +95,7 @@ After CC work mode is enabled, all GPU performance counters are disabled to prot
 ---
 ### Confidential MIG
 
-![image](https://github.com/Mirror-Tang/vortex/blob/master/image/6.png)
+![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/6.png)
 
 Related Technologies:
 
@@ -168,9 +168,9 @@ export RUST_LOG="[executor]=info"
 ```
 Seconds:
 
-Tests the time required for Bonsai and Vortex to prove in circuits with different Total Cycles quantities.
+Tests the time required for Bonsai and ZeroBase to prove in circuits with different Total Cycles quantities.
 
-### Vortex:
+### ZeroBase:
 
 After calling the API, check the “total_seconds” field in the response.
 
@@ -792,9 +792,9 @@ The response is in JSON format and includes the following fields:
 
 ## Gnark Remote Proof Generation
 
-## Vortex Private Cloud
+## ZeroBase Private Cloud
 
-Vortex Private Cloud is a solution that helps manage local private server clusters (primarily GPU servers and computing-purpose CPU servers) and offers computing services to multiple users in a containerized manner. The main differences from conventional private cluster management software include:
+ZeroBase Private Cloud is a solution that helps manage local private server clusters (primarily GPU servers and computing-purpose CPU servers) and offers computing services to multiple users in a containerized manner. The main differences from conventional private cluster management software include:
 
 1. Low Entry Barrier and Maintenance. Local servers only need to deploy a few simple service components, resulting in very low maintenance efforts. Other functions like member user management, registration and login, control plane-related services, and computing power scheduling are all provided by the cloud. This means you don't need additional machines for deploying management services, databases, or message queues to have a complete set of cluster management software infrastructure.
 
@@ -806,6 +806,6 @@ Vortex Private Cloud is a solution that helps manage local private server cluste
 
 5. High Data Security. Offers nearly the same data security guarantees as fully private deployment options. Since the cloud only manages control plane data such as user management, computing power inventory, and scheduling, and server access can be restricted to internal network environments only, it simultaneously supports low maintenance, great user experience, and high security.
 
-6. Based on AutoDL, Vortex Private Cloud seamlessly utilizes the CodeWithGPU community images.
+6. Based on AutoDL, ZeroBase Private Cloud seamlessly utilizes the CodeWithGPU community images.
 
 ---
