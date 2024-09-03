@@ -3,7 +3,7 @@
 <div align="center">ZeroBase is not a blockchain</div>
 
 <p align="center">
-  <img alt="ZeroBase" width="300" height="300" src="/image/ZeroBaselogo.png"/>
+  <img alt="ZeroBase" width="300" height="300" src="/image/zerobase.png"/>
 </p>
 
 ## ZeroBase Architecture
@@ -28,7 +28,7 @@ The ZeroBase Network consists of ZeroBase nodes operated by users, whose job is 
 
 ### Confidential Computing(CC) Working Mode of Confidential GPU
 
-![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/1.png)
+![image](/image/1.png)
 
 • The CC work mode must be configured before the GPU starts. In cloud scenarios, it is set by the VMM; the CC work mode bit is configured into the GPU EEPROM, and then a GPU reset must be performed for it to take effect.
 
@@ -39,7 +39,7 @@ The ZeroBase Network consists of ZeroBase nodes operated by users, whose job is 
 ---
 ### How to Protect Memory after Enabling CC Work Mode？
 
-![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/2.png)
+![image](/image/2.png)
 
 • Most of the GPU memory is configured into the Compute Protected Region (CPR), where the memory is protected by hardware firewalls internal to the GPU.
 
@@ -52,7 +52,7 @@ The ZeroBase Network consists of ZeroBase nodes operated by users, whose job is 
 ---
 ### How does Confidential Computing Protect CUDA Programs (without needing to change the CUDA programs)?
 
-![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/3.png)
+![image](/image/3.png)
 
 • All communication between the CPU and GPU is encrypted, including data transfers, commands, and CUDA kernels.
 
@@ -65,7 +65,7 @@ The ZeroBase Network consists of ZeroBase nodes operated by users, whose job is 
 ---
 ### Internal Protection Mechanisms of a Confidential GPU
 
-![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/4.png)
+![image](/image/4.png)
 
 If the GPU is started in CC (Confidential Computing) work mode, it blocks all inbound and outbound access to the GPU CPR (Compute Protected Region) memory.
 
@@ -82,7 +82,7 @@ After CC work mode is enabled, all GPU performance counters are disabled to prot
 ---
 ### Multi GPU Secret Computing Based on CVM
 
-![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/5.png)
+![image](/image/5.png)
 
 • Enable NVLink communication between GPUs and devices. 1. After enabling CC working mode, do not use PCIe P2P; 2. Both CUDA APIs and hardware firewalls prohibit direct pointer dereference of peer GPU memory.
 
@@ -95,7 +95,7 @@ After CC work mode is enabled, all GPU performance counters are disabled to prot
 ---
 ### Confidential MIG
 
-![image](https://github.com/Mirror-Tang/ZeroBase/blob/master/image/6.png)
+![image](/image/6.png)
 
 Related Technologies:
 
